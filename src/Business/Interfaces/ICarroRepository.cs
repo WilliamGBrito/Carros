@@ -4,5 +4,6 @@ namespace Business.Interfaces
 {
     public interface ICarroRepository : IRepository<Carro>
     {
+        Task<Carro> ObterModelo(string modelo);
     }
 }

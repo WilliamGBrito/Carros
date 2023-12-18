@@ -17,11 +17,11 @@ namespace Business.Services
         {
             if (!ExecutarValidacao(new CarroValidation(), carro)) return;
 
-            var carroExistente = _carroRepository.ObterPorId(carro.Id);
+            var carroExistente = await _carroRepository.ObterModelo(carro.Modelo);//.ObterPorId(carro.Id);
 
             if (carroExistente != null)
             {
-                Notificar("Já existe um carro com o ID informado!");
+                Notificar("Já existe um carro com o MODELO informado!");
                 return;
             }
 
