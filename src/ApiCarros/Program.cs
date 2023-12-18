@@ -1,3 +1,4 @@
+using ApiCarros.Configuration;
 using Data.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,6 +23,10 @@ namespace ApiCarros
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            builder.Services.ResolveDependencies();
 
             var app = builder.Build();
 
