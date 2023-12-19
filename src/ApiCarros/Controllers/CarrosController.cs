@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace ApiCarros.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
     public class CarrosController : MainController
     {
         private readonly IMapper _mapper;
